@@ -4,6 +4,7 @@ import Formularz from './Formularz';
  
 const Notatka = ({ data }) => {
   const [note, setNote] = useState(data);
+  const [title, setTitle] = useState("")
  
   useEffect(() => {
     setNote(data);
@@ -26,7 +27,7 @@ const Notatka = ({ data }) => {
   function handleRemove(id) {
     setNote(prev => prev.filter(item => item.id !== id));
   }
- 
+
   return (
     <div className='notes-content'>
       {note.map(item => (
